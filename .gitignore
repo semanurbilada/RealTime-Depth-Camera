@@ -1,2 +1,7 @@
+# general
 .vscode
 .DS_Store*
+
+# models
+midas_v21_384.onnx
+midas_v21_small_256.onnx
