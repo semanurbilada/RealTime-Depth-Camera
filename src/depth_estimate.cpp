@@ -31,7 +31,7 @@ vector<string> getOutputsNames(const cv::dnn::Net& net)
 }
 
 int main() {
-    string file_path = "models/";
+    string file_path = "./src/models/";
 
     // Read Network
     string model = "midas_v21_384.onnx"; // MiDaS v2.1 Large
@@ -39,7 +39,7 @@ int main() {
 
 
     // Read in the neural network from the files
-    auto net = readNet(file_path+model);
+    auto net = readNet(file_path+model);    
 
 
     if (net.empty())
