@@ -1,5 +1,3 @@
-// Original Doc: https://docs.doji-tech.com/com.doji.midas/manual/models.html
-// https://github.com/niconielsen32/ComputerVision/blob/master/MonocularDepth/depthEstimationMono.cpp
 #include <iostream>
 #include <fstream>
 #include <opencv2/opencv.hpp>
@@ -37,11 +35,10 @@ int main() {
     string model = "midas_v21_384.onnx"; // MiDaS v2.1 Large
     // string model = "midas_v21_small_256.onnx"; // MiDaS v2.1 Small
 
-
     // Read in the neural network from the files
     auto net = readNet(file_path+model);    
 
-
+    // If the model is empty, program should be terminate
     if (net.empty())
     {
         return -1;
@@ -116,11 +113,13 @@ int main() {
         auto fps = 1 / totalTime;
 
 
+        // Display FPS and real-time frame
         putText(output, "FPS: " + to_string(int(fps)), Point(50, 50), FONT_HERSHEY_DUPLEX, 1, Scalar(255, 255, 255), 2, false);
 
         imshow("image", image);
         imshow("depth", output);
 
+        // Press 'q' to exit the program
         if(waitKey(1) == 'q'){
             break;
         }
