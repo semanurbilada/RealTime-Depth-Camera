@@ -1,4 +1,4 @@
-# Real-time Depth Estimation with OpenCV & Neural Networks in C++
+# Real-Time Depth Estimation with OpenCV & Neural Networks in C++
 
 > **AI Lecture Term Project – 4th Grade, 2nd Term**
 
@@ -8,6 +8,25 @@ This project demonstrates real-time monocular depth estimation using a pre-train
 
 ## 📁 Project Structure
 
+The project follows this directory structure:
+
+```
+RealTime-Depth-Camera/
+├── .vscode/                   # Editor configs for VSCode (optional)
+├── build/                     # Compiled output binary (auto-generated)
+│   └── depth_estimate         # Executable built from depth_estimate.cpp
+├── docs/                      # For storing additional docs or reports (optional)
+├── src/                       # Source code and model files
+│   ├── depth_estimate.cpp     # Main source file for real-time depth estimation
+│   └── models/                # Contains pre-trained ONNX models for depth estimation
+│       ├── midas_v21_384.onnx           # MiDaS v2.1 large model (384x384 resolution)
+│       └── midas_v21_small_256.onnx     # MiDaS v2.1 small model (256x256 resolution)
+│
+├── .gitignore                 # Git ignore rules
+├── CMakeFileList.txt          # CMake-related configuration (if used)
+├── launch.sh                  # Build and run script for compiling and executing the project
+└── README.md                  # Project documentation (this file)
+```
 
 ---
 
@@ -25,8 +44,8 @@ This project demonstrates real-time monocular depth estimation using a pre-train
 You can build and run the project using the provided shell script:
 
 ```bash
-chmod +x build_and_run.sh
-./build_and_run.sh
+chmod +x launch.sh
+./launch.sh
 ```
 
 This script will:
