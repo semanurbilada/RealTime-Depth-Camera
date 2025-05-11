@@ -1,9 +1,9 @@
-#include <iostream>
-#include <fstream>
-#include <opencv2/opencv.hpp>
-#include <opencv2/dnn.hpp>
-#include <opencv2/dnn/all_layers.hpp>
 #include <vector>
+#include <fstream>
+#include <iostream>
+#include <opencv2/dnn.hpp>
+#include <opencv2/opencv.hpp>
+#include <opencv2/dnn/all_layers.hpp>
 
 using namespace std;
 using namespace cv;
@@ -52,8 +52,10 @@ int main() {
     net.setPreferableBackend(DNN_BACKEND_OPENCV);
     net.setPreferableTarget(DNN_TARGET_CPU);
 
-    // Open up the webcam
+    // Open up the webcam with configs
     VideoCapture cap(1);
+    cap.set(CAP_PROP_FRAME_WIDTH, 320);
+    cap.set(CAP_PROP_FRAME_HEIGHT, 240);
 
 
     // Loop running as long as webcam is open and "q" is not pressed
@@ -116,8 +118,8 @@ int main() {
         // Display FPS and real-time frame
         putText(output, "FPS: " + to_string(int(fps)), Point(50, 50), FONT_HERSHEY_DUPLEX, 1, Scalar(255, 255, 255), 2, false);
 
-        imshow("image", image);
-        imshow("depth", output);
+        imshow("Original Frames", image);
+        imshow("Depth Estimation", output);
 
         // Press 'q' to exit the program
         if(waitKey(1) == 'q'){
