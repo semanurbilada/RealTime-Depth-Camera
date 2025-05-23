@@ -24,7 +24,7 @@ RealTime-Depth-Camera/
 │
 ├── .gitignore                 # Git ignore rules
 ├── CMakeFileList.txt          # CMake-related configuration (if used)
-├── launch.sh                  # Build and run script for compiling and executing the project
+├── launch.sh                  # Build and run script for compiling and executing
 └── README.md                  # Project documentation (this file)
 ```
 
